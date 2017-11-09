@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nabla</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+
+    <body>
+        <div class="pageContentWrapper">
+            <div id=header>
+              <h1>Welcome to NABLA</h1>
+              <h4>
+                A resource that takes the source of teh yabla challenge and
+                provides a transcript for easy reference
+              </h4>
+              </h3>
+                              Directions:
+              <ul style="text-align:left">
+                <li>1. right click on the yabla page of the challenge you are playing</li>
+                <li>2. press Ctrl + A to highlight the entire page of html. Press Ctrl + C to copy the text.</li>
+                <li>3. Come back to this page and paste the text into the "HTML SCRAPE" box</li>
+                <li>4. Press "Scrape HTML for Transcript" button</li>
+                <li>5. Pray</li>
+              </ul>
+              {% if error is defined and error %}
+                <h5>Sorry, there has been an error O.O</h5>
+                <p> {{ error }} </p>
+                <p> The data entered was probably incompatible, or entered incorrectly. Please try again </p>
+              {% endif %}
+            </div>
+
+            <div id="formdiv" title="Enter your data!" style="display:inline-block;padding:50px;">
+            <form action="/{{ var }}/result" method="POST">
+                <p>HTML SCRAPE<br>   <input title="html" type="text" name="html" value=""/></p>
+                <p><input type="submit" name="action" value="Scrape HTML for Transcript" /></p>
+            </form>
+        <div class="footer"><a href="/index"> Go back </a></div>
+</body>
+</html>

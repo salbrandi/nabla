@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nabla</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+
+    <body>
+        <div class="pageContentWrapper">
+            <h1>Transcript Result:</h1>
+            {{ transcript | safe }}
+            </div>
+        </div>
+        <div class="footer"><a href="/{{ var }}/input"> Go back </a></div>
+    </body>
+</html>
